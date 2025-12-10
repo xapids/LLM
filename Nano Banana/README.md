@@ -319,7 +319,7 @@ This setup lets you use the same JSON both as:
 - a compact intermediate representation for Nano Banana; and  
 - a stable “contract” between extraction, design, and rendering stages.
 
----<br><br><br><br><br>
+<br><br><br><br><br>
   
 ## [3D Modelling View Selection](./3D%20Modeling%20View%20Creator.md)
 
