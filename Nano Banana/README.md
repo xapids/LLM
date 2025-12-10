@@ -30,7 +30,7 @@ The extractor itself is LLM-based (e.g. Nano Banana in “text+vision” mode). 
 
 The JSON has six main parts:
 
-1.1 `legend` – mini dictionary of category codes and flags.  
+[1.1 `legend`](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#11-legend) – mini dictionary of category codes and flags.  
 1.2 `proj` – project metadata.  
 1.3 `media` – input image filenames.  
 1.4 `space` – room geometry (footprint and walls).  
