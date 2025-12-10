@@ -320,7 +320,7 @@ This setup lets you use the same JSON both as:
 - a stable “contract” between extraction, design, and rendering stages.
 
 
-## 3D Modelling View Selectionasdasd
+## [3D Modelling View Selection](./3D%20Modeling%20View%20Creator.md)
 
 This spec defines how to add a **canonical set of pseudo-3D “orbit” views** to an existing room JSON (as produced by the *Image → JSON Extractor*), so that you can iteratively design around a specific focus area (e.g. a kitchen front, TV wall, desk zone).
 
