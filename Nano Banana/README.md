@@ -269,7 +269,7 @@ You can override `rules` in later design stages (e.g. keep furniture, change onl
 
 ### 2. Usage
 
-### 2.1 Step 1 – Extraction (this repo file)
+#### 2.1 Step 1 – Extraction (this repo file)
 
 1. In a Nano Banana (or other LLM) chat:
    - Paste the full text from `Image -> JSON Extractor.md`.  
@@ -286,7 +286,7 @@ This JSON is now your **room model**.
 
 ---
 
-### 2.2 Step 2 – Design / clear-out / pseudo-3D work
+#### 2.2 Step 2 – Design / clear-out / pseudo-3D work
 
 In a new Nano Banana chat:
 
@@ -330,9 +330,9 @@ The JSON contract stays the same; you only add or update a small family of views
 
 ---
 
-## 1. Inputs and outputs
+### 1. Inputs and outputs
 
-### 1.1 Input
+#### 1.1 Input
 
 - A **single room JSON** that already follows the *Image → JSON Extractor* schema:
   - `space.geom.pts`, `space.geom.H`, `space.geom.walls`
@@ -345,7 +345,7 @@ The JSON contract stays the same; you only add or update a small family of views
   - By approximate area description, e.g. `"centre of the south wall"` or `"corner where w2 meets w3"`
   - Optionally by explicit `xy` (0–1), e.g. `"focus near [0.75, 0.25]"`
 
-### 1.2 Output
+#### 1.2 Output
 
 - The **same JSON object**, but with:
   - Additional or updated `views` entries for the pseudo-3D orbit views.
@@ -355,11 +355,11 @@ Nothing else is changed unless explicitly requested.
 
 ---
 
-## 2. Focus definition
+### 2. Focus definition
 
 First, define a normalised focus point inside the room.
 
-### 2.1 Compute `focus_xy`
+#### 2.1 Compute `focus_xy`
 
 Use the following priority:
 
@@ -382,7 +382,7 @@ Use the following priority:
    - Infer the closest wall(s) and approximate position from the text (e.g. “middle of south wall” ⇒ mid-point of that wall).
    - Clamp `focus_xy` to [0,1]×[0,1].
 
-### 2.2 Focus height
+#### 2.2 Focus height
 
 - Let `focus_h = min( max(1.0, H * 0.4), 1.4 )` where `H = space.geom.H`.
   - If `H` is not available, default `focus_h = 1.1`.
@@ -391,7 +391,7 @@ The height is a conceptual “look-at” level; it is not stored as a field, but
 
 ---
 
-## 3. Canonical pseudo-3D views
+### 3. Canonical pseudo-3D views
 
 We define up to **four** standard views around the focus point:
 
@@ -404,7 +404,7 @@ You may drop `v_focus_over` if the user only wants three views.
 
 All views **look at** the same `focus_xy` region; their cameras are placed around it in an arc.
 
-### 3.1 Common values
+#### 3.1 Common values
 
 - Base radius `r` (distance from focus to camera on the floor plane):
   - Let `r = 0.25` in normalised units (25 % of the smaller room dimension).
@@ -417,7 +417,7 @@ All views **look at** the same `focus_xy` region; their cameras are placed aroun
 - All views use the same lens by default:
   - `lens = { "t": "wide", "f": 18, "fov": 90 }`
 
-### 3.2 Angle convention
+#### 3.2 Angle convention
 
 Define a local frame around `focus_xy`:
 
@@ -439,7 +439,7 @@ cam_y = focus_y - r * sin(θ)
 
 Clamp `(cam_x, cam_y)` back into [0,1]×[0,1] if needed, keeping it close to the footprint boundary.
 
-### 3.3 View definitions
+#### 3.3 View definitions
 
 Each view becomes a `views` entry.
 
@@ -476,7 +476,7 @@ The JSON does not store an explicit look-at vector; by convention, the render en
 
 ---
 
-## 4. Render outputs for pseudo-3D views
+### 4. Render outputs for pseudo-3D views
 
 Extend `render.outs` with matching entries:
 
@@ -508,9 +508,9 @@ Do **not** remove existing `outs`; just append or update the `r_focus_*` entries
 
 ---
 
-## 5. How to use this spec
+### 5. How to use this spec
 
-### 5.1 Prompting pattern (core Pseudo 3D step)
+#### 5.1 Prompting pattern (core Pseudo 3D step)
 
 In a Nano Banana (or other LLM) chat, once you already have the room JSON:
 
@@ -530,7 +530,7 @@ The LLM:
 - Computes camera positions per this spec.
 - Inserts or updates `v_focus_front`, `v_focus_left`, `v_focus_right`, (and optionally `v_focus_over`) and their corresponding `r_focus_*` entries in `render.outs`.
 
-### 5.2 Usage – keep view count small per call
+#### 5.2 Usage – keep view count small per call
 
 For accuracy and token efficiency:
 
@@ -542,7 +542,7 @@ For accuracy and token efficiency:
 
 This keeps Nano Banana’s attention and sampling budget focused on the current area instead of scattering it across many views.
 
-### 5.3 Working copy / prune mode (optional)
+#### 5.3 Working copy / prune mode (optional)
 
 If you want to minimise tokens for a specific Nano Banana call:
 
@@ -556,7 +556,7 @@ Do not overwrite the master JSON with the pruned version unless you intentionall
 
 ---
 
-## 6. Design principles
+### 6. Design principles
 
 - **Reuse the same JSON contract** – no new top-level keys; only more `views` + `render.outs`.
 - **Stable naming** – the `v_focus_*` / `r_focus_*` pattern makes it trivial to script or automate.
