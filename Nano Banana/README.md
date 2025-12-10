@@ -29,7 +29,7 @@ The extractor itself is LLM-based (e.g. Nano Banana in “text+vision” mode). 
 
 ---
 
-### 1. High-level structure
+### 1. High-level structureasdasdasd
 
 The JSON has six main parts:
 
