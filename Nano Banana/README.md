@@ -4,18 +4,18 @@
 ## Table of Contents
 
 [Nano Banana – Image → JSON Extractor](#nano-banana--image--json-extractor)
- - [1. High‑level structure](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#1-high-level-structure)
-  - [1.1
-  - [1.2 proj](#2-proj)
-  - [1.3 media](#3-media)
-  - [1.4 space – geometry and walls](#4-space--geometry-and-walls)
-  - [1.5 views – cameras for each reference / render](#5-views--cameras-for-each-reference--render)
-  - [1.6 elems – all elements in the room](#6-elems--all-elements-in-the-room)
-  - [1.7 render – outputs and keep/remove rules](#7-render--outputs-and-keepremove-rules)
-- [2. Usage](#usage)
-  - [2.1 Step 1 – Extraction (this repo file)](#step-1--extraction-this-repo-file)
-  - [2.2 Step 2 – Design / clear‑out / pseudo‑3D work](#step-2--design--clear-out--pseudo-3d-work)
-- [3. Design principles](#design-principles)
+- [1. High‑level structure](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#1-high-level-structure)
+ - [1.1 legend](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#11-legend)
+ - [1.2 proj](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#12-proj)
+ - [1.3 media](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#13-media)
+ - [1.4 space](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#14-space--geometry-and-walls)
+ - [1.5 views](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#15-views--cameras-for-each-reference--render)
+ - [1.6 elems](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#16-elems--all-elements-in-the-room)
+ - [1.7 render](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#17-render--outputs-and-keepremove-rules)
+- [2. Usage](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#2-usage)
+  - [2.1 Step 1 – Extraction (this repo file)](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#21-step-1--extraction-this-repo-file)
+  - [2.2 Step 2 – Design / clear‑out / pseudo‑3D work](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#22-step-2--design--clear-out--pseudo-3d-work)
+- [3. Design principles](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#3-design-principles)
 
 
 ## [Nano Banana – Image → JSON Extractor](./Image%20-%3E%20JSON%20Extractor.md)
@@ -30,13 +30,13 @@ The extractor itself is LLM-based (e.g. Nano Banana in “text+vision” mode). 
 
 The JSON has six main parts:
 
-[1.1 `legend`](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#11-legend) – mini dictionary of category codes and flags.  
+1.1 `legend` – mini dictionary of category codes and flags.  
 1.2 `proj` – project metadata.  
 1.3 `media` – input image filenames.  
 1.4 `space` – room geometry (footprint and walls).  
-1.6 `views` – camera positions for each reference image (and later, render views).  
-1.7 `elems` – all room elements (floor, walls, windows, furniture, appliances, clutter).  
-1.8 `render` – requested outputs + simple keep/remove rules by category.
+1.5 `views` – camera positions for each reference image (and later, render views).  
+1.6 `elems` – all room elements (floor, walls, windows, furniture, appliances, clutter).  
+1.7 `render` – requested outputs + simple keep/remove rules by category.
 
 Very compact, but enough for coherent geometry and repeated render passes.
 
