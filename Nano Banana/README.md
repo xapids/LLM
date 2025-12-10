@@ -5,7 +5,7 @@
 
 [Nano Banana – Image → JSON Extractor](#nano-banana--image--json-extractor)
  - [1. High‑level structure](#high-level-structure)
-  - [1.1 legend](#1-legend)
+  - [1.1 legend]([#1-legend](https://github.com/xapids/LLM/edit/main/Nano%20Banana/README.md#11-legend))
   - [1.2 proj](#2-proj)
   - [1.3 media](#3-media)
   - [1.4 space – geometry and walls](#4-space--geometry-and-walls)
