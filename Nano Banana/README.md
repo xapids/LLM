@@ -3,7 +3,7 @@
 
 ## Table of Contents
 
-[Image → JSON Extractor](#nano-banana--image--json-extractor)
+[Image → JSON Extractor](https://github.com/xapids/LLM/tree/main/Nano%20Banana#image--json-extractor)
 - [1. High‑level structure](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#1-high-level-structure)
   - [1.1 legend](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#11-legend)
   - [1.2 proj](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#12-proj)
