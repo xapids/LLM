@@ -26,7 +26,7 @@ The extractor itself is LLM-based (e.g. Nano Banana in “text+vision” mode). 
 
 ---
 
-## 1. High-level structure
+### 1. High-level structure
 
 The JSON has six main parts:
 
@@ -42,7 +42,7 @@ Very compact, but enough for coherent geometry and repeated render passes.
 
 ---
 
-## 1.1 `legend`
+### 1.1 `legend`
 
 ```json
 "legend": {
@@ -76,7 +76,7 @@ Purpose:
 
 ---
 
-## 1.2 `proj`
+### 1.2 `proj`
 
 ```json
 "proj": {
@@ -88,7 +88,7 @@ Just a human label for the current room / scenario. Useful for logging or multi-
 
 ---
 
-## 1.3 `media`
+### 1.3 `media`
 
 ```json
 "media": {
@@ -108,7 +108,7 @@ The extractor LLM sees these images directly; the JSON only stores filenames + i
 
 ---
 
-## 1.4 `space` – geometry and walls
+### 1.4 `space` – geometry and walls
 
 ```json
 "space": {
@@ -138,7 +138,7 @@ This gives Nano Banana a reusable, explicit floor shape + wall segmentation, rat
 
 ---
 
-## 1.5 `views` – cameras for each reference / render
+### 1.5 `views` – cameras for each reference / render
 
 ```json
 "views": [
@@ -179,7 +179,7 @@ For reference images, the extractor fills these. For synthetic render views, you
 
 ---
 
-## 1.6 `elems` – all elements in the room
+### 1.6 `elems` – all elements in the room
 
 Each entry describes one element or a group of elements.
 
@@ -249,7 +249,7 @@ Key fields:
 
 ---
 
-## 1.7 `render` – outputs and keep/remove rules
+### 1.7 `render` – outputs and keep/remove rules
 
 ```json
 "render": {
@@ -285,7 +285,7 @@ You can override `rules` in later design stages (e.g. keep furniture, change onl
 
 ---
 
-## 2. Usage
+### 2. Usage
 
 ### 2.1 Step 1 – Extraction (this repo file)
 
