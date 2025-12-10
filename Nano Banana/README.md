@@ -17,7 +17,7 @@
    - [2.2 Step 2 – Design / clear‑out / pseudo‑3D work](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#22-step-2--design--clear-out--pseudo-3d-work)
 - [3. Design principles](https://github.com/xapids/LLM/blob/main/Nano%20Banana/README.md#3-design-principles)
 
-[3D Modelling View Selection](https://github.com/xapids/LLM/tree/main/Nano%20Banana#3d-modelling-view-selectionn)
+[3D Modelling View Selection](https://github.com/xapids/LLM/tree/main/Nano%20Banana#3d-modelling-view-selection)
 
 ---
 
