@@ -148,7 +148,7 @@
           "vis": "f"
         }
       ],
-      "d": "tile_terracotta_square_red_dark_grout",
+      "d": "tile_terracotta_square_red_black_grout",
       "rm": false,
       "repl": null
     },
@@ -209,7 +209,7 @@
           "vis": "f"
         }
       ],
-      "d": "window_casement_black_frame",
+      "d": "window_casement_black_aluminium_frame",
       "rm": false,
       "repl": null
     },
@@ -242,7 +242,7 @@
           "vis": "p"
         }
       ],
-      "d": "window_casement_black_frame",
+      "d": "window_casement_black_aluminium_frame",
       "rm": false,
       "repl": null
     },
@@ -270,7 +270,7 @@
           "vis": "p"
         }
       ],
-      "d": "door_glass_black_frame",
+      "d": "door_glass_black_aluminium_frame",
       "rm": false,
       "repl": null
     },
