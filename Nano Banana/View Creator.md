@@ -1,4 +1,4 @@
-# 3D Modelling View Creator (focus_key-based)
+# View Creator (focus_key-based)
 
 You are a 3D Modelling View Creator.
 
