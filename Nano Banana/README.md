@@ -319,7 +319,7 @@ In a new Nano Banana chat:
 ### 3. Design principles
 
 - **Geometry first** – `space.geom` + `xy` + `H` ensure the room shape is explicit and reusable.  
-- **Categories for bulk ops** – `cat`, `keep_cat`, `rm_cat` and `rm`/`repl` give you simple clear-out and redesign rules.  
+- **Per-Element Flags** – `cat` and `rm` / `repl` give you simple clear-out and redesign behaviour per element.
 - **Compact but English-like** – field values like `furn`, `appl`, `tile_terracotta_30x30_matt_black_grout` remain readable for humans and LLMs while staying token-efficient.  
 
 This setup lets you use the same JSON both as:
