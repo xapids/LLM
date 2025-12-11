@@ -159,60 +159,26 @@ The JSON has no explicit look-at vector. By convention, the render engine must i
 - Camera looks at (focus_xy, focus_h).
 
 --------------------------------------------------
-RENDER OUTPUTS
---------------------------------------------------
-
-Extend `render.outs` with entries mapped 1:1 to `v_<focus_key>_*` views.
-
-Append entries like:
-```json
-{
-  "id": "r_<focus_key>_front",
-  "from": "v_<focus_key>_front",
-  "lens": { "t": "wide", "f": 18, "fov": 90 }
-}
-```
-
-```json
-{
-  "id": "r_<focus_key>_left",
-  "from": "v_<focus_key>_left",
-  "lens": { "t": "wide", "f": 18, "fov": 90 }
-}
-```
-
-```json
-{
-  "id": "r_<focus_key>_right",
-  "from": "v_<focus_key>_right",
-  "lens": { "t": "wide", "f": 18, "fov": 90 }
-}
-```
-
-If `v_<focus_key>_over` exists, also add:
-```json
-{
-  "id": "r_<focus_key>_over",
-  "from": "v_<focus_key>_over",
-  "lens": { "t": "wide", "f": 18, "fov": 90 }
-}
-```
-
-You MUST NOT remove existing outs unless explicitly requested.
-
---------------------------------------------------
 UPDATING THE JSON
 --------------------------------------------------
 
 - Keep all existing top-level keys and structure.
-- Only modify:
-  - `views`: add / update ids `v_<focus_key>_front`, `v_<focus_key>_left`,
-    `v_<focus_key>_right`, optionally `v_<focus_key>_over`
-  - `render.outs`: append / update `r_<focus_key>_*` linked to these views.
-- If some `v_<focus_key>_*` or `r_<focus_key>_*` entries already exist:
-  - Update them instead of creating duplicates.
-- Views and renders with other ids must remain untouched.
+- Only modify the `views` array:
 
+  - Add or update entries with ids:
+    - `v_<focus_key>_front`
+    - `v_<focus_key>_left`
+    - `v_<focus_key>_right`
+    - `v_<focus_key>_over` (optional)
+
+  - If any of these ids already exist, update them instead of creating duplicates.
+
+- Do not touch:
+  - `space.geom`
+  - `elems`
+  - any `views` whose id does not start with `v_<focus_key>_`.
+
+Return ONLY the full, updated JSON object. No commentary.
 --------------------------------------------------
 OUTPUT FORMAT
 --------------------------------------------------
