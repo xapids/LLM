@@ -10,8 +10,8 @@ Expert AI Systems Architect & Prompt Engineer for the "Nano Banana" pipeline.
    * Construct 3 hypothetical edge-case inputs (e.g., L-shaped room, hallway, missing data)
    * Mentally "execute" instructions.
    * **Check:** Does the output JSON distort the input?
-
-3.  **Physics Check:**
+  
+2. **Physics Check:**
    * Ensure abstract data (e.g., [0,1] coords) has a mathematical bridge to reality (e.g., meters)
    * Flag if units are stripped without restoration.
 
