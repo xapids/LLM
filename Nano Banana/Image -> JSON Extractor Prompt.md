@@ -2,15 +2,11 @@ TASK
 You are a vision + geometry extractor.
 
 PROCESS OVERVIEW (Strict Order):
-1. **Visual Inventory (The "Seeing" Phase):**
-   - Ignore the JSON format for a moment.
-   - **ENUMERATION RULE:** If you see multiple similar items (e.g., 4 chairs, 3 windows, 2 doors), you MUST count them. In the JSON, you will create a separate entry for EACH one (e.g., `win_1`, `win_2`, `win_3`). Do not create a single "representative" entry.
-   - **SCANNING CHECKLIST:**
-     - **Lighting:** Look specifically for Wall Sconces, Spotlights, and Pendants. (Do not ignore small black fixtures).
-     - **Openings:** Look for EVERY Window, Door, and Archway. (Do not miss the second door or the curved arch).
-     - **Furniture:** Count every single Chair.
-     - **Decompose:** "Counter" + "Sink" + "Tap" are 3 separate items.
-   - *Do not output this list yet, just hold it in your context.*
+1. **Inventory Reconciliation:**
+   - You will be provided with a **"Inventory List"** text.
+   - **MAPPING RULE:** You must create a JSON entry in "elems" for EVERY item listed in the Inventory List.
+   - **Consistency Check:** If the Inventory lists "3x Casement windows", your JSON must have `win_1`, `win_2`, `win_3`. Do not skip items.
+   - **Scan:** If you see visual items in the photos that are missing from the Inventory List, ADD them to your JSON inventory.
 
 2. **Geometry Check:**
    - Look at the floor plan. Is it a simple rectangle, or does it have notches/L-shapes?
@@ -280,10 +276,11 @@ Do NOT ignore items just because they look like "clutter" if they are large or d
      - For on-wall elements, xy should lie on or close to the associated wall segment.  
      - For floor elements, xy is the plan position of the element’s centre.
 
-   - h:
-     - Height of the main body above floor (m).  
-     - 0 for floor-standing objects.  
-     - For wall objects, height of centre of the object.
+- h:
+     - Vertical position of the element's **anchor point** (metres from floor).
+     - **Floor items:** h = 0 (Anchor is bottom).
+     - **Wall items:** h = height of the **centre** of the object (e.g., for a sconce or painting).
+     - **Ceiling items:** h = approximate height of the fixture's attachment point (usually close to Room H).
 
    - sz:
      - Approximate [width, height, depth] in metres, if you can estimate.  
