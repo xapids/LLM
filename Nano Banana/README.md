@@ -6,7 +6,7 @@ It is intentionally **per-room**, not a whole-house schema.
 
 ---
 
-## 0. Pipeline (per room, per call)
+## Pipeline
 
 For each room you want to work with, the intended flow is:
 
@@ -52,10 +52,47 @@ This README is **explanatory only**. For exact field-by-field rules, see the fil
 * Image → JSON Extractor Prompt – canonical single-room extractor.
 * View Creator Prompt – canonical orbit-view generator around a focus area.
 
+---
+
+## Elements Extractor Prompt
+
+This prompt acts as the project's **"Surveyor"**. It converts visual data into a rigorous, text-based inventory *before* any JSON coding happens.
+
+By separating the "seeing" (inventory) from the "coding" (JSON formatting), we significantly reduce hallucinations and missing items in the final model.
+
+### What it does
+
+* **Zero Estimation:** It forces the model to count every item (e.g., "3x windows" instead of "some windows").
+* **Decomposition:** It breaks complex units into parts (e.g., a Kitchen is broken into "Base unit", "Wall unit", "Sink", "Tap").
+* **Architectural Scan:** It specifically targets structural features often missed, like beams, cornices, and risers.
+
+### Inputs
+
+* The prompt text from Elements ExtractorPrompt
+* The **same** image set you will use for the JSON Extractor (1 floor plan + interior reference photos).
+
+### Output Structure
+
+The output is a Markdown-formatted "Inventory List" divided into three strict categories. You will copy-paste this output into the *Image → JSON Extractor* in the next step.
+
+#### A. Architecture & Openings (The Shell)
+* **Windows & Doors:** Exact counts of every opening.
+* **Structure:** Beams, columns, steps, and level changes.
+* **MEP/Fixed:** Radiators, AC units, wall sconces, ceiling fans.
+
+#### B. Fixed Joinery & Kitchen (The Built-ins)
+* **Kitchen:** Breakdown of drawer fronts, cabinet doors, and appliances.
+* **Fixtures:** Sinks and taps listed separately from counters.
+* **Storage:** Built-in wardrobes and cupboards.
+
+#### C. Loose Furniture & Decor
+* **Seating:** Every chair, stool, and bench counted.
+* **Surfaces:** Tables, desks, and freestanding shelves.
+* **Groups:** Distinct clusters of clutter (e.g., "Laundry rack group").
 
 ---
 
-## Image → JSON Extractor
+## Image → JSON Extractor Prompt
 
 This extractor prompt converts a **single-room floor plan + interior photos** into a compact JSON description that Nano Banana can use as a geometric + semantic scene model.
 
@@ -341,7 +378,7 @@ This setup lets you use the same JSON both as:
 
 <br><br><br><br><br>
   
-## [3D Modelling View Creator](./3D%20Modeling%20View%20Creator.md)
+## View Creator Prompt
 
 This spec takes an existing **single-room** JSON (from the Image → JSON Extractor) and adds a small family of pseudo-3D “orbit” views around a chosen focus area.
 
