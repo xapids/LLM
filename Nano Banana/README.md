@@ -186,7 +186,8 @@ The extractor LLM sees these images directly; the JSON only stores filenames + i
 ```json
 "space": {
   "geom": {
-    "pts": [[0,0],[1,0],[1,0.6],[0.4,1],[0,1]],
+    "bounds": [4.5, 3.2],
+    "pts": [[0,0],[1,0],[1,0.71],[0.4,0.71],[0,1]],
     "H": 2.6,
     "walls": [
       { "id": "w1", "seq": 1, "p0": 0, "p1": 1, "label": "entrance_wall" },
@@ -199,9 +200,10 @@ The extractor LLM sees these images directly; the JSON only stores filenames + i
 }
 ```
 
-- `pts`: polygon vertices of the room footprint, **normalised** to [0,1] x [0,1].  
+- `bounds`: [width, length] in **physical meters** (read from floor plan dimensions).
+- `pts`: polygon vertices of the room footprint, **normalised** to [0,1] via Uniform Scaling (aspect ratio preserved).
   - Index i in this array is used as `p0` / `p1` in walls.  
-- `H`: room height.  
+- `H`: room height.
 - `walls`: each wall is a segment between two vertices (`p0`→`p1`) and has:
   - `id`: stable identifier (`"w1"`, `"w2"`, …).  
   - `seq`: perimeter order index (1-based).  
