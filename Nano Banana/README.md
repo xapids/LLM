@@ -75,17 +75,17 @@ By separating the "seeing" (inventory) from the "coding" (JSON formatting), we s
 
 The output is a Markdown-formatted "Inventory List" divided into three strict categories. You will copy-paste this output into the *Image → JSON Extractor* in the next step.
 
-#### A. Architecture & Openings (The Shell)
+A. Architecture & Openings (The Shell)
 * **Windows & Doors:** Exact counts of every opening.
 * **Structure:** Beams, columns, steps, and level changes.
 * **MEP/Fixed:** Radiators, AC units, wall sconces, ceiling fans.
 
-#### B. Fixed Joinery & Kitchen (The Built-ins)
+B. Fixed Joinery & Kitchen (The Built-ins)
 * **Kitchen:** Breakdown of drawer fronts, cabinet doors, and appliances.
 * **Fixtures:** Sinks and taps listed separately from counters.
 * **Storage:** Built-in wardrobes and cupboards.
 
-#### C. Loose Furniture & Decor
+C. Loose Furniture & Decor
 * **Seating:** Every chair, stool, and bench counted.
 * **Surfaces:** Tables, desks, and freestanding shelves.
 * **Groups:** Distinct clusters of clutter (e.g., "Laundry rack group").
