@@ -10,17 +10,17 @@ It is intentionally **per-room**, not a whole-house schema.
 
 For each room you want to work with, the intended flow is:
 
-1. Create a Bill of Quantities (Inventory)
-   * Use the prompt in Elements Prompt.
+1. Create an Inventory List
+   * Use the Elements Extractor Prompt.
    * Inputs: floor plan + interior photos.
    * Output: A structured text list of architectural features, joinery, and furniture.
    * This step ensures no items are missed before coding begins.
 
 2. Extract a room model (once per room or per batch of images)
-   * Use the prompt in Image → JSON Extractor.
+   * Use the Image → JSON Extractor prompt.
    * Inputs:
      * One floor plan image + one or more interior reference images of the *same* room.
-     * The "Bill of Quantities" text from Step 1.
+     * The Invetory List text from Step 1.
    * Output: a JSON object describing:
 
      * room geometry (`space`),
@@ -46,10 +46,11 @@ For each room you want to work with, the intended flow is:
      * the full `space` and `elems`, but
      * only a small subset of `views` corresponding to shots you want now.
 
-This README is **explanatory only**. For exact field-by-field rules, see:
+This README is **explanatory only**. For exact field-by-field rules, see the files:
 
-* [Image → JSON Extractor](./Image%20-%3E%20JSON%20Extractor.md) – canonical single-room extractor.
-* [View Creator](./3D%20Modeling%20View%20Creator.md) – canonical orbit-view generator around a focus area.
+* Elements Extractor Prompt - inventory list extractor
+* Image → JSON Extractor Prompt – canonical single-room extractor.
+* View Creator Prompt – canonical orbit-view generator around a focus area.
 
 
 ---
