@@ -52,7 +52,7 @@ This README is **explanatory only**. For exact field-by-field rules, see the fil
 * Image → JSON Extractor Prompt – canonical single-room extractor.
 * View Creator Prompt – canonical orbit-view generator around a focus area.
 
----
+<br><br><br><br><br>
 
 ## Elements Extractor Prompt
 
