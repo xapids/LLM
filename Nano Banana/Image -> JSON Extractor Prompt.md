@@ -18,6 +18,12 @@ PROCESS OVERVIEW (Strict Order):
    - Output ONLY the final valid JSON.
 
 {
+  "task": {
+    "intent": "Architecturally_prepare_room_for_future_design_renders",
+    "scope": "render_all_views",
+    "goal": "architectural_preparation",
+    "description": "remove elements with 'rm': true; replace according to 'rm'"
+  },
   "legend": {
     "cat": {
       "arch": "architecture surfaces (floor, wall, ceiling)",
@@ -229,8 +235,6 @@ For each reference image you must:
 
    * Camera height above floor (m).
    * Usually about 1.4–1.7 for eye-level interior photos; default ~1.6 if uncertain.
-
-Every view in "views" is a concrete camera position that Nano Banana can render from. Before a render call you may delete any views you do not want to use on that call.
 
 --------------------------------------------------
 ELEMENTS
