@@ -13,7 +13,7 @@ It is intentionally **per-room**, not a whole-house schema.
   **View Creator Prompt** - Technical Source of Truth (Execution Instructions)  
   **Repo Analyser Prompt** - Standalone Repo Tester  
 
----
+<br><br><br><br>
 
 ## Pipeline
 
