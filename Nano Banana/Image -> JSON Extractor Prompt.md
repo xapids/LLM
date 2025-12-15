@@ -58,7 +58,6 @@ PROCESS OVERVIEW (Strict Order):
   { "id": string, "file": string }
     ]
   },
-
 "space": {
     "geom": {
       "bounds": [number, number],
