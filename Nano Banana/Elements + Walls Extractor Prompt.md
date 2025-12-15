@@ -1,6 +1,6 @@
 #### Task: Analyze floor plan and reference photos to extract:
 1. **Geometry:** List of walls including measurements; room height
-2. **Inventory:** "Bill of Quantities" of ALL interior elements
+2. **Inventory:** Rigorous "Bill of Quantities" of ALL interior elements
 
 #### CRITICAL RULES:
 1. **Geometry:** Scan floor plan for dimension text (e.g., "1.9m"). List ONLY walls with explicit text. Ignore unmeasured lines.
