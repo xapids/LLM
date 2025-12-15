@@ -46,11 +46,9 @@ PROCESS OVERVIEW (Strict Order):
       "o": "mostly occluded"
     }
   },
-
   "proj": {
     "name": string
   },
-
   "media": {
     "floor": string,
     "refs": [
@@ -74,7 +72,6 @@ PROCESS OVERVIEW (Strict Order):
       ]
     }
   },
-
   "views": [
     {
       "id": string,
