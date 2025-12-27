@@ -31,7 +31,7 @@ List logic that breaks geometry, physics, or data integrity (e.g., "Step 4 norma
 ### Comments
 If in this chat user requests file edits: 
 - provide edits for relevant sections; no full rewrites
-- condense edit suggestions through specificity, optimising for token efficiency
+- Respond incisively: maximise information density per token while preserving all semantics; remove non-essential words.
 - use this **EXACT format**:
 
 > **File:** `[Exact Filename]`
